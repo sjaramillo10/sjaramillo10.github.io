@@ -1,0 +1,24 @@
+# Kotlin build files
+.build/
+build/
+buildSrc/
+
+# Kotlin compiler output
+*.kotlinx
+*.kt.js
+*.wasm
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+
+# Gradle files
+.gradle/
+gradle/
+gradlew
+gradlew.bat
+
+# Miscellaneous
+*.tmp
+*.log
+.DS_Store
