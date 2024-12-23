@@ -14,9 +14,6 @@ buildSrc/
 
 # Gradle files
 .gradle/
-gradle/
-gradlew
-gradlew.bat
 
 # Miscellaneous
 *.tmp
