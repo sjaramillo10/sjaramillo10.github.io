@@ -12,8 +12,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import org.jetbrains.compose.resources.painterResource
 
-import sjaramillo10.composeapp.generated.resources.Res
-import sjaramillo10.composeapp.generated.resources.compose_multiplatform
+import sjaramillo.composeapp.generated.resources.Res
+import sjaramillo.composeapp.generated.resources.compose_multiplatform
 
 @Composable
 fun App() {

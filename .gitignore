@@ -2,6 +2,7 @@
 .build/
 build/
 buildSrc/
+.kotlin
 
 # Kotlin compiler output
 *.kotlinx
