@@ -28,11 +28,15 @@ kotlin {
         binaries.executable()
     }
 
+    // Desktop target added to enable Preview functionality.
+    // Remove once Previews are properly generated when wasm is the only target
+    jvm("desktop")
+
     sourceSets {
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
-            implementation(compose.material)
+            implementation(compose.material3)
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
