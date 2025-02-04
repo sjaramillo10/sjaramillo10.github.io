@@ -1,47 +1,44 @@
 package io.github.sjaramillo10
 
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import org.jetbrains.compose.resources.painterResource
+import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffold
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
-
-import sjaramillo.composeapp.generated.resources.Res
-import sjaramillo.composeapp.generated.resources.compose_multiplatform
-
-@Composable
-fun App() {
-    MaterialTheme {
-        AppContent()
-    }
-}
-
-@Composable
-private fun AppContent() {
-    var showContent by remember { mutableStateOf(false) }
-    Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-        Button(onClick = { showContent = !showContent }) {
-            Text("Click me!")
-        }
-        AnimatedVisibility(showContent) {
-            val greeting = remember { "Seven says: Hello!" }
-            Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-                Image(painterResource(Res.drawable.compose_multiplatform), null)
-                Text("Compose: $greeting")
-            }
-        }
-    }
-}
 
 @Preview
 @Composable
-private fun AppContentPreview() {
-    AppContent()
+fun App() {
+    var currentDestination by rememberSaveable { mutableStateOf(AppDestinations.HOME) }
+
+    MaterialTheme {
+        NavigationSuiteScaffold(
+            navigationSuiteItems = {
+                AppDestinations.entries.forEach {
+                    item(
+                        icon = {
+                            Icon(
+                                imageVector = it.icon,
+                                contentDescription = stringResource(it.contentDescription),
+                            )
+                        },
+                        label = { Text(stringResource(it.label)) },
+                        selected = it == currentDestination,
+                        onClick = { currentDestination = it },
+                    )
+                }
+            }
+        ) {
+            when (currentDestination) {
+                AppDestinations.HOME -> Text("Home")
+                AppDestinations.PROFILE -> Text("Profile")
+            }
+        }
+    }
 }
