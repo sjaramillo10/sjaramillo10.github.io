@@ -1,7 +1,6 @@
 package io.github.sjaramillo10
 
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffold
 import androidx.compose.runtime.Composable
@@ -9,6 +8,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import io.github.sjaramillo10.theme.AppTheme
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -17,7 +17,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 fun App() {
     var currentDestination by rememberSaveable { mutableStateOf(AppDestinations.HOME) }
 
-    MaterialTheme {
+    AppTheme {
         NavigationSuiteScaffold(
             navigationSuiteItems = {
                 AppDestinations.entries.forEach {
