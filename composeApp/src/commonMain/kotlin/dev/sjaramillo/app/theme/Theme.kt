@@ -1,4 +1,4 @@
-package io.github.sjaramillo10.theme
+package dev.sjaramillo.app.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

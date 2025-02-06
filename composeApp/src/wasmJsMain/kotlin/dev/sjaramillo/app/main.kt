@@ -1,4 +1,4 @@
-package io.github.sjaramillo10
+package dev.sjaramillo.app
 
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.window.ComposeViewport

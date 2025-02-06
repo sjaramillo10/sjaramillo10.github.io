@@ -1,4 +1,4 @@
-package io.github.sjaramillo10
+package dev.sjaramillo.app
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountBox
