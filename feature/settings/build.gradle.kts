@@ -16,13 +16,15 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
+            implementation(projects.library.datastore)
+            implementation(projects.library.designSystem)
+
             implementation(compose.components.uiToolingPreview)
             implementation(compose.foundation)
             implementation(compose.material3)
+            implementation(compose.material3AdaptiveNavigationSuite)
             implementation(compose.runtime)
             implementation(compose.ui)
         }
     }
 }
-
-

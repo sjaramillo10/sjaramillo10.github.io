@@ -8,6 +8,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import dev.sjaramillo.feature.settings.SettingsScreen
 import dev.sjaramillo.library.designsystem.theme.AppTheme
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -38,6 +39,7 @@ fun App() {
             when (currentDestination) {
                 AppDestinations.HOME -> Text("Home")
                 AppDestinations.PROFILE -> Text("Profile")
+                AppDestinations.SETTINGS -> SettingsScreen()
             }
         }
     }
