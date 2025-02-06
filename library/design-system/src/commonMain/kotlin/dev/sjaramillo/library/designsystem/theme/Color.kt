@@ -1,4 +1,4 @@
-package dev.sjaramillo.app.theme
+package dev.sjaramillo.library.designsystem.theme
 
 import androidx.compose.ui.graphics.Color
 

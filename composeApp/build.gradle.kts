@@ -34,6 +34,8 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
+            implementation(projects.library.designSystem)
+
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
             implementation(compose.foundation)
