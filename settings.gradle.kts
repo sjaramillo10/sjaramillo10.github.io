@@ -17,4 +17,6 @@ dependencyResolutionManagement {
 }
 
 include(":composeApp")
+include(":feature:settings")
+include(":library:datastore")
 include(":library:design-system")

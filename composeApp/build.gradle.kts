@@ -34,6 +34,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
+            implementation(projects.feature.settings)
             implementation(projects.library.designSystem)
 
             implementation(compose.components.resources)
